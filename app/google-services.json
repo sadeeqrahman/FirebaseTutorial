@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1096075241022",
+    "project_id": "siginsignupusingfirebase",
+    "storage_bucket": "siginsignupusingfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096075241022:android:5326fac0c58afd54da136f",
+        "android_client_info": {
+          "package_name": "com.encoders.siginsignupusingfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096075241022-6vq343c1l3is7etnasq8botnim0ldvvr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWy2X78_U0Qzbw5bORGdK66zJW00re42g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096075241022-6vq343c1l3is7etnasq8botnim0ldvvr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
