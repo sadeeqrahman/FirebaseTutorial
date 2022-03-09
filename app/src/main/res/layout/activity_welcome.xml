@@ -8,35 +8,8 @@
         android:layout_height="match_parent"
         tools:context=".WelcomeActivity">
 
-
-    <EditText
-            android:id="@+id/username"
-            android:inputType="textEmailAddress"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Username"/>
-
-
-    <EditText
-            android:id="@+id/designation"
-            android:inputType="textEmailAddress"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Designation"/>
-
-
-    <ProgressBar
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:id="@+id/progress_circular"/>
+    <androidx.legacy.widget.Space android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:layout_weight="1"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:layout_marginTop="20dp"
@@ -48,16 +21,10 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save User"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/userslist"/>
-
+            android:text="Send / Fetch Data To RealtimeDatabase"/>
 
     <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="10dp"
             android:id="@+id/logout"
             android:textColor="@color/white"
             android:background="@color/black"
@@ -66,7 +33,9 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Logout"/>
+            android:text="Upload / Fetch Image From Realtime Database"/>
 
+    <androidx.legacy.widget.Space android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:layout_weight="1"/>
 
 </LinearLayout>

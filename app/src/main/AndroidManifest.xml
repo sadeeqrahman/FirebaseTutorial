@@ -9,11 +9,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.SiginSignUpUsingFirebase">
-
+        <activity
+                android:name=".SendRetrieveDataActivity"
+                android:exported="true"/>
         <activity
                 android:name=".SignUpActivity"
                 android:exported="true"/>
-
         <activity
                 android:name=".WelcomeActivity"
                 android:exported="true"/>

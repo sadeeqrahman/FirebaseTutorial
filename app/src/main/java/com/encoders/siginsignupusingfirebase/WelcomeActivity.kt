@@ -19,15 +19,9 @@ import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.*
 
-class WelcomeActivity : AppCompatActivity() , onUserlickListner {
-    private lateinit var ref: DatabaseReference
-    private lateinit var logout: AppCompatButton
-    private lateinit var save_user: AppCompatButton
-    private lateinit var username: EditText
-    private lateinit var designation: EditText
-    private lateinit var progress_circular: ProgressBar
-    private lateinit var userslist: RecyclerView
-    private lateinit var userlist: MutableList<User>
+class WelcomeActivity : AppCompatActivity()  {
+     private lateinit var logout: AppCompatButton
+
     override fun onBackPressed() {
         super.onBackPressed()
         finishAffinity()
@@ -37,95 +31,15 @@ class WelcomeActivity : AppCompatActivity() , onUserlickListner {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
 
-        username = findViewById(R.id.username)
-        designation = findViewById(R.id.designation)
-        progress_circular = findViewById(R.id.progress_circular)
-        userslist = findViewById(R.id.userslist)
 
-        save_user = findViewById(R.id.save_user)
         logout = findViewById(R.id.logout)
         logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(this,MainActivity::class.java))
         }
 
-        save_user.setOnClickListener {
-            Save_User()
-        }
-
-
-        getdata()
-    }
-
-
-    fun Save_User() {
-        ref = FirebaseDatabase.getInstance().getReference("Users")
-        if ( username.text.toString().isEmpty() || designation.text.toString().isEmpty()) {
-            Toast.makeText(
-                baseContext, "Enter Username and Designation First",
-                Toast.LENGTH_SHORT
-            ).show()
-        } else {
-            progress_circular.visibility = View.VISIBLE
-            val sdf = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
-            val currentDate = sdf.format(Date())
-            val heroId = ref.push().key
-            val hero =
-                User(currentDate.toString(), username.text.toString(), designation.text.toString())
-            ref.child(heroId!!).setValue(hero).addOnCompleteListener {
-                username.setText("")
-                designation.setText("")
-                progress_circular.visibility = View.GONE
-            }
-        }
-    }
-
-
-    private fun getdata() {
-        userlist = mutableListOf()
-        val nm = FirebaseDatabase.getInstance().getReference("Users")
-        nm.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    userlist = mutableListOf()
-
-
-                    for (npsnapshot in dataSnapshot.children) {
-                        val l = npsnapshot.getValue(User::class.java)
-                        userlist.add(l!!)
-                    }
-
-                    UserList()
-
-                }
-
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {}
-        })
-
 
     }
 
-    fun UserList() {
-        userslist.layoutManager =
-            LinearLayoutManager(
-                this,
-                LinearLayoutManager.VERTICAL,
-                false
-            )
-
-        val usersListAdapter =
-            UsersListAdapter(
-                userlist, this@WelcomeActivity,
-            )
-        userslist.adapter = usersListAdapter
-
-
-    }
-
-    override fun onUserlickListner(user: User, position: Int) {
-
-    }
 
 }
