@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
+import com.encoders.siginsignupusingfirebase.UI.WelcomeActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         if (user != null) {
             user?.let {
                 // Name, email address, and profile photo Url
-                startActivity(Intent(this,WelcomeActivity::class.java))
+                startActivity(Intent(this, WelcomeActivity::class.java))
                 finish()
             }
 

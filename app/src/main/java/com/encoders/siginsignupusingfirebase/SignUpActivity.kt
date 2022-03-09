@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatButton
+import com.encoders.siginsignupusingfirebase.UI.WelcomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -43,7 +44,7 @@ class SignUpActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     progress_circular.visibility = View.GONE
-                    startActivity(Intent(this,WelcomeActivity::class.java))
+                    startActivity(Intent(this, WelcomeActivity::class.java))
                     finish()
                 } else {
 

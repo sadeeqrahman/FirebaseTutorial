@@ -1,6 +1,5 @@
-package com.encoders.siginsignupusingfirebase
+package com.encoders.siginsignupusingfirebase.UI
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,7 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.encoders.siginsignupusingfirebase.Adapter.UsersListAdapter
 import com.encoders.siginsignupusingfirebase.Adapter.onUserlickListner
-import com.google.firebase.auth.FirebaseAuth
+import com.encoders.siginsignupusingfirebase.R
+import com.encoders.siginsignupusingfirebase.User
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -25,10 +25,7 @@ class SendRetrieveDataActivity :AppCompatActivity() , onUserlickListner {
     private lateinit var progress_circular: ProgressBar
     private lateinit var userslist: RecyclerView
     private lateinit var userlist: MutableList<User>
-    override fun onBackPressed() {
-        super.onBackPressed()
-        finishAffinity()
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

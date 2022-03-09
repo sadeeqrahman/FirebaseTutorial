@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.encoders.siginsignupusingfirebase">
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -10,13 +12,16 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.SiginSignUpUsingFirebase">
         <activity
-                android:name=".SendRetrieveDataActivity"
+                android:name=".UI.UploadImageActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".UI.SendRetrieveDataActivity"
                 android:exported="true"/>
         <activity
                 android:name=".SignUpActivity"
                 android:exported="true"/>
         <activity
-                android:name=".WelcomeActivity"
+                android:name=".UI.WelcomeActivity"
                 android:exported="true"/>
         <activity
                 android:name=".SignInActivity"

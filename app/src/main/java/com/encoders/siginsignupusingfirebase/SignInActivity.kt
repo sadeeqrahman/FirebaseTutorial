@@ -3,12 +3,12 @@ package com.encoders.siginsignupusingfirebase
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import com.encoders.siginsignupusingfirebase.UI.WelcomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -46,7 +46,7 @@ class SignInActivity : AppCompatActivity() {  private lateinit var auth: Firebas
                     // Sign in success, update UI with the signed-in user's information
                     progress_circular.visibility = View.GONE
                     val user = auth.currentUser
-                    startActivity(Intent(this,WelcomeActivity::class.java))
+                    startActivity(Intent(this, WelcomeActivity::class.java))
                     finish()
 
                 }else{
